@@ -45,6 +45,19 @@ A **thread** is the smallest unit of execution within a process, sometimes calle
 - Each thread has its own program counter, register set, and stack, allowing independent execution within the same process.
 - Processes are fully independent entities; threads are not. Threads within the same process can easily communicate and synchronize with each other.
 - Threads are more suitable for concurrent and parallel execution in multi-threaded environments because they enable faster context switching and efficient resource sharing compared to processes.
+
+
+### Difference between User-Level Thread and Kernel-Level Thread
+
+| User-Level Thread                                         | Kernel-Level Thread                                      |
+|-----------------------------------------------------------|----------------------------------------------------------|
+| Implemented by users                                      | Implemented by the operating system                      |
+| Not recognized by the operating system                    | Recognized by the operating system                       |
+| Easy to implement                                         | Complicated to implement                                 |
+| Context switch time is less                               | Context switch time is more                              |
+| No hardware support required for context switch           | Hardware support is needed for context switch            |
+| If one thread performs a blocking operation, the entire process is blocked | If one thread performs a blocking operation, other threads can continue execution |
+| Designed as dependent threads                             | Designed as independent threads                          |
 ---
 
 ## 1. What is Context Switching?
@@ -100,3 +113,5 @@ For example, every time unit a process spends waiting, its priority can be incre
 
 ---
 ---
+
+### CPU Scheduling Algorithms
