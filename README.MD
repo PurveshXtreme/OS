@@ -28,18 +28,23 @@ Typically, the OS organizes processes in the ready and waiting states into queue
 
 A **thread** is the smallest unit of execution within a process, sometimes called a lightweight process. Threads allow applications to perform tasks in parallel, improving efficiency. For example, in a browser, each tab may run as a separate thread; in MS Word, one thread formats text while another processes user input.
 
-| Aspect            | Process                                           | Thread                                                    |
-|-------------------|--------------------------------------------------|-----------------------------------------------------------|
-| Definition        | Program in action (independent execution unit)    | Subset of instructions within a process (lightweight)     |
-| Scheduling        | Scheduled independently by the OS                 | Can be scheduled independently within a process           |
-| Address Space     | Has its own address space                         | Shares address space with other threads in the process    |
-| Resources         | Has its own resources (files, memory, etc.)       | Shares resources of the process (files, signals, etc.)    |
-| Independence      | Fully independent entity                          | Not fully independent; depends on the process context     |
-| Program Counter   | Own program counter                               | Own program counter                                       |
-| Registers         | Own set of CPU registers                          | Own set of CPU registers                                  |
-| Stack Space       | Own stack space                                   | Own stack space                                           |
-| Communication     | Inter-process communication (IPC) needed          | Can communicate and synchronize efficiently               |
-| Use Case          | Used for isolation and security                   | Used for concurrency and parallelism                      |
+### Differences between Process and Thread
+
+| Process                                   | Thread                                                  |
+|--------------------------------------------|---------------------------------------------------------|
+| Program in execution; independent entity   | Schedulable unit within a process ("lightweight process")|
+| Has its own address space and resources    | Shares address space and resources with other threads    |
+| Communication between processes is complex | Threads can easily communicate and synchronize           |
+| Context switching is more costly           | Faster context switching, efficient resource sharing     |
+
+
+### Differences between Process and Thread
+
+- A **process** is a program in execution, while a **thread** is a smaller, schedulable unit of execution within a process.
+- Threads are considered "lightweight processes" because they share the same address space (code, data, and operating system resources like open files and signals) with other threads of the same process.
+- Each thread has its own program counter, register set, and stack, allowing independent execution within the same process.
+- Processes are fully independent entities; threads are not. Threads within the same process can easily communicate and synchronize with each other.
+- Threads are more suitable for concurrent and parallel execution in multi-threaded environments because they enable faster context switching and efficient resource sharing compared to processes.
 ---
 
 ## 1. What is Context Switching?
