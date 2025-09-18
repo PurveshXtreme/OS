@@ -1,5 +1,15 @@
+## Table of Contents
+
+- [Processes, Threads & Scheduling](#processes-threads--scheduling)
+- [CPU Scheduling Algorithms](#cpu-scheduling-algorithms)
+- [Memory Management & Virtual Memory](#memory-management--virtual-memory)
+- [Deadlocks & Concurrency](#deadlocks--concurrency)
+- [OS Basics](#os-basics)
+- [Special Processes](#special-processes)
 
 ---
+
+### Processes, Threads & Scheduling
 
 ### Q1: What is a process, process table, and what are the different states of a process?
 
