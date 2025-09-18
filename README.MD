@@ -28,10 +28,18 @@ Typically, the OS organizes processes in the ready and waiting states into queue
 
 A **thread** is the smallest unit of execution within a process, sometimes called a lightweight process. Threads allow applications to perform tasks in parallel, improving efficiency. For example, in a browser, each tab may run as a separate thread; in MS Word, one thread formats text while another processes user input.
 
-**Differences between process and thread:**
-- A **process** is a program in action, whereas a **thread** is a subset (segment) of instructions within a process that can be scheduled independently.
-- Threads are lightweight and share the same address space (code, data, and OS resources like open files and signals) with other threads of the same process. However, each thread maintains its own program counter, register set, and stack, allowing for independent execution.
-- Processes are fully independent entities, while threads are not and can communicate and synchronize more efficiently. This makes threads suitable for concurrent and parallel execution in multi-threaded environments.
+| Aspect            | Process                                           | Thread                                                    |
+|-------------------|--------------------------------------------------|-----------------------------------------------------------|
+| Definition        | Program in action (independent execution unit)    | Subset of instructions within a process (lightweight)     |
+| Scheduling        | Scheduled independently by the OS                 | Can be scheduled independently within a process           |
+| Address Space     | Has its own address space                         | Shares address space with other threads in the process    |
+| Resources         | Has its own resources (files, memory, etc.)       | Shares resources of the process (files, signals, etc.)    |
+| Independence      | Fully independent entity                          | Not fully independent; depends on the process context     |
+| Program Counter   | Own program counter                               | Own program counter                                       |
+| Registers         | Own set of CPU registers                          | Own set of CPU registers                                  |
+| Stack Space       | Own stack space                                   | Own stack space                                           |
+| Communication     | Inter-process communication (IPC) needed          | Can communicate and synchronize efficiently               |
+| Use Case          | Used for isolation and security                   | Used for concurrency and parallelism                      |
 ---
 
 ## 1. What is Context Switching?
