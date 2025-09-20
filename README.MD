@@ -218,8 +218,80 @@ For example, every time unit a process spends waiting, its priority can be incre
 ---
 
 ### 95. What is Belady's Anomaly?
-- **Belady's Anomaly** refers to the counterintuitive situation where, under certain page replacement policies (especially FIFO), increasing the number of page frames can actually increase the number of page faults.
-- This anomaly highlights inefficiencies in some page replacement algorithms.
+-Bélády's anomaly is an anomaly with some page replacement policies increasing the number of page frames resulting in an increase in the number of page faults. It occurs when the First In First Out page replacement is used. 
+
+---
+---
+
+### Deadlocks & Concurrency
+
+### What is a Critical Section?
+- A **critical section** is a part of code where shared resources or variables are accessed.
+- Only one process should execute in the critical section at a time to prevent data inconsistency.
+- These regions need to be executed atomically (as a single, uninterrupted unit).
+
+---
+
+### Solutions to the Critical Section Problem
+- **Software Solutions:** Algorithms to ensure mutual exclusion without special hardware.
+- **Hardware Solutions:** Use of special CPU instructions to manage access.
+- **Semaphores:** Special variables used to control access and synchronization.
+
+---
+
+### What is Peterson’s Approach?
+- Peterson’s algorithm is a software solution for synchronizing two processes for mutual exclusion.
+- Uses two variables: a boolean flag array (size 2) and an integer `turn`.
+- Ensures only one process accesses the critical section at a time.
+
+---
+
+### What is Deadlock?
+- **Deadlock** is when two or more processes are each waiting for the other to release resources, so none of them can proceed.
+- Example: Two trains facing each other on a single track, unable to move.
+
+---
+
+### Necessary Conditions for Deadlock
+1. **Mutual Exclusion:** Some resources cannot be shared.
+2. **Hold and Wait:** Processes hold resources and wait for others.
+3. **No Preemption:** Resources can’t be forcefully taken away.
+4. **Circular Wait:** Processes are waiting in a circular chain.
+
+---
+
+### Resource Allocation Graph (RAG)
+- RAG is a diagram showing processes and resources and their relationships.
+- Useful for visualizing potential deadlocks in the system.
+
+---
+
+### Deadlock Recovery Methods
+- **Process Termination:** Abort all or one process at a time until deadlock is gone.
+- **Resource Preemption:** Take resources away from processes.
+- **Rollback:** Roll back processes to a previous safe state.
+- **Victim Selection:** Choose processes to terminate based on criteria.
+
+---
+
+### What is Concurrency?
+- **Concurrency** is the condition where multiple processes exist and make progress at the same time.
+
+---
+
+### Inter-Process Communication (IPC)
+- **IPC** enables processes to communicate and synchronize their actions.
+- Allows cooperation and data sharing between processes.
+
+#### Common IPC Mechanisms
+| Mechanism               | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| Pipes                   | One-way data flow between processes with a common origin                    |
+| Named Pipes (FIFO)      | Pipes with names for processes without a common origin                      |
+| Message Queuing         | Passing messages via queues managed by the kernel                           |
+| Semaphores              | Variables for synchronization and avoiding race conditions                  |
+| Shared Memory           | Defined memory area for data exchange; access controlled by semaphores      |
+| Sockets                 | Communication over a network, often between client and server               |
 
 ---
 ---
