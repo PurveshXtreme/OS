@@ -141,8 +141,6 @@ For example, every time unit a process spends waiting, its priority can be incre
 
 ### Memory Management & Virtual Memory
 
-## Memory Management & Virtual Memory – Structured Notes (Interview Perspective)
-
 ### What is Thrashing? When does it occur?
 - **Thrashing** is a situation where the computer’s performance drops drastically because the system is spending more time handling page faults than executing actual processes.
 - It happens when processes frequently access memory pages that are not in physical memory, causing constant loading and unloading from disk (paging device).
