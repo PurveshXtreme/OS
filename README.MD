@@ -115,3 +115,26 @@ For example, every time unit a process spends waiting, its priority can be incre
 ---
 
 ### CPU Scheduling Algorithms
+
+## Different CPU Scheduling Algorithms (Brief Explanation)
+
+- **First-Come, First-Served (FCFS) Scheduling:**  
+  The simplest scheduling algorithm. Processes are executed in the order they arrive in the ready queue. Non-preemptive and can lead to long waiting times for short processes if a long process arrives first.
+
+- **Shortest-Job-Next (SJN) / Shortest Job First (SJF) Scheduling:**  
+  The process with the shortest estimated burst time is selected next. Non-preemptive. Minimizes average waiting time but requires knowledge of future burst times.
+
+- **Priority Scheduling:**  
+  Each process is assigned a priority. The scheduler selects the process with the highest priority (usually the lowest numerical value). Can be preemptive or non-preemptive. May cause starvation for lower-priority processes.
+
+- **Shortest Remaining Time (SRT) Scheduling:**  
+  Preemptive version of SJN/SJF. If a new process arrives with a shorter remaining time than the currently running process, the CPU switches to the new process.
+
+- **Round Robin (RR) Scheduling:**  
+  Each process is assigned a fixed time slice (quantum) and processes are cycled through the ready queue. Preemptive, fair, and suitable for time-sharing systems.
+
+- **Multiple-Level Queues Scheduling:**  
+  The ready queue is split into several queues based on process types (e.g., system, interactive, batch). Each queue may use a different scheduling algorithm and have different priorities. Movement between queues can be restricted or allowed.
+
+
+
