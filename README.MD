@@ -226,6 +226,7 @@ For example, every time unit a process spends waiting, its priority can be incre
 ### Deadlocks & Concurrency
 
 ### What is a Critical Section?
+- When more than one processes access the same code segment that segment is known as the critical section.
 - A **critical section** is a part of code where shared resources or variables are accessed.
 - Only one process should execute in the critical section at a time to prevent data inconsistency.
 - These regions need to be executed atomically (as a single, uninterrupted unit).
