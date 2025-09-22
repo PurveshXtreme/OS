@@ -4,7 +4,6 @@
 - [CPU Scheduling Algorithms](#cpu-scheduling-algorithms)
 - [Memory Management & Virtual Memory](#memory-management--virtual-memory)
 - [Deadlocks & Concurrency](#deadlocks--concurrency)
-- [OS Basics](#os-basics)
 - [Special Processes](#special-processes)
 
 ---
@@ -293,6 +292,25 @@ For example, every time unit a process spends waiting, its priority can be incre
 | Semaphores              | Variables for synchronization and avoiding race conditions                  |
 | Shared Memory           | Defined memory area for data exchange; access controlled by semaphores      |
 | Sockets                 | Communication over a network, often between client and server               |
+
+---
+---
+
+### Special Processes
+
+## Zombie and Orphan Processes
+
+### What is a Zombie Process?
+- A **zombie process** is a process that has completed its execution but still has an entry in the process table.
+- This entry remains so the process can report its exit status to its parent.
+- The parent process reaps the zombie by reading its exit status, after which the entry is removed from the process table.
+
+---
+
+### What is an Orphan Process?
+- An **orphan process** is a process whose parent has finished or terminated without waiting for the child process to finish.
+- The orphan process is then adopted by the init process (or another system process) so it can complete execution.
+
 
 ---
 ---
